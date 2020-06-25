@@ -1,3 +1,7 @@
+echo Removing Old Public List Files
+rm -- *.txt
+rm *.json
+
 ### Get Region Names ###
 curl_cli --insecure https://download.microsoft.com/download/7/1/D/71D86715-5596-4529-9B13-DA13A5DE5B63/ServiceTags_Public_20200622.json --output azure.json
 cat azure.json |jq --raw-output '.values[] | .name' >region_names.txt
