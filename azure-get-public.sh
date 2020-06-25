@@ -18,7 +18,7 @@ rm *-ip.txt
 for i in *-import.txt;
   do
     groupname=$(echo "$i" | cut -f 1 -d '-')
-    echo -e "mgmt_cli -r true login > id.txt\nmgmt_cli -s id.txt add group name $groupname " | cat - $i > temp && mv temp $i
+    echo -e "mgmt_cli -r true login > id.txt\nmgmt_cli -s id.txt add group name Azure-$groupname " | cat - $i > temp && mv temp $i
     echo "mgmt_cli -s id.txt publish" >> $i
     echo "mgmt_cli -s id.txt logout" >> $i
     chmod +x $i
